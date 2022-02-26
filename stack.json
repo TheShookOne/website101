@@ -1,0 +1,27 @@
+{
+    "Stacks": [
+        {
+            "StackId": "arn:aws:cloudformation:us-east-1:423223718907:stack/website/21bd6210-7a73-11ec-9870-0a41de8661b1",
+            "StackName": "website",
+            "ChangeSetId": "arn:aws:cloudformation:us-east-1:423223718907:changeSet/awscli-cloudformation-package-deploy-1642740356/210a64cb-5a21-4006-9b15-0edc14e4a023",
+            "Description": "personal site - bucket, bucket policy, cloudfront, OriginAccessIdentity",
+            "CreationTime": "2022-01-21T04:32:24.836000+00:00",
+            "LastUpdatedTime": "2022-01-21T04:46:00.693000+00:00",
+            "RollbackConfiguration": {},
+            "StackStatus": "UPDATE_COMPLETE",
+            "DisableRollback": false,
+            "NotificationARNs": [],
+            "Outputs": [
+                {
+                    "OutputKey": "bucketName",
+                    "OutputValue": "website-bucket-6v1eqwyq5o98",
+                    "Description": "My website content bucket"
+                }
+            ],
+            "Tags": [],
+            "DriftInformation": {
+                "StackDriftStatus": "NOT_CHECKED"
+            }
+        }
+    ]
+}

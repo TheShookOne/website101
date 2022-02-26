@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "personal site - bucket, bucket policy, cloudfront, OriginAccessIdentity"
+Resources:
+  bucket: #Can be named whatever you want here
+    Type: AWS::S3::Bucket
+  CloudFrontOriginAccessIdentity:
+    Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+    Properties:
+      CloudFrontOriginAccessIdentityConfig:
+        Comment: !Sub "${bucket} OAI"
+  ReadPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref bucket
+      PolicyDocument:
+        Statement:
+          - Action: "s3:GetObject"
+            Effect: Allow
+            Resource: !Sub "arn:aws:s3:::${bucket}/*"
+            Principal:
+              CanonicalUser: !GetAtt CloudFrontOriginAccessIdentity.S3CanonicalUserId
+  contentDistributionNetwork:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: True
+        DefaultRootObject: "index.html"
+        PriceClass: PriceClass_100
+        DefaultCacheBehavior:
+          TargetOriginId: s3Origin
+          ViewerProtocolPolicy: redirect-to-https
+          ForwardedValues:
+            QueryString: True
+        Origins:
+          - Id: s3Origin
+            DomainName: !GetAtt "bucket.DomainName"
+            S3OriginConfig:
+              OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/${CloudFrontOriginAccessIdentity}"
+
+Outputs: # Not necessary but these create variables accessible by outside code
+  bucketName:
+    Description: "My website content bucket"
+    Value: !Ref bucket
+  cdnUrl:
+    Description: "The url belonging to my website served by cloudfront"
+    Value: !GetAtt contentDistributionNetwork.DomainName
+  s3Url:
+    Description: "The url belonging to my website served by regular s3"
+    Value: !GetAtt "bucket.DomainName"
