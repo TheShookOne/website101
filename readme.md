@@ -4,8 +4,18 @@ If you want to go to the best website ever created then click here -> [Click Me]
 
 ## Deploying Content to Website
 
+Ensure you are logged into aws within the command line by running:
+
+```sh
+aws-sso-login
+```
+
 In the infrastructure folder, you can run:
 
-### `npm run build`
+```sh
+npm run build
 
-### `./deploy-content.ps1`
+# Then run
+
+./deploy-content.ps1
+```
