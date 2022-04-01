@@ -5,10 +5,10 @@ function NavBar() {
       <div className="navbar-front">
         <div className="navbar-item">
           <a
-            className="button is-danger is-small"
-            href="https://www.youtube.com/watch?v=zL19uMsnpSU"
+            className="button is-primary is-small"
+            href="https://github.com/Datamosh-js/datamosh"
           >
-            Don't Click Me
+            Picture Moshpit
           </a>
         </div>
       </div>
