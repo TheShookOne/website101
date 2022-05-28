@@ -1,4 +1,4 @@
-import homePhoto from "../KarlieCaleb.jpg";
+import homePhoto from "../betterPicture.jpg";
 import { Link } from "react-router-dom";
 
 function HomePage() {
