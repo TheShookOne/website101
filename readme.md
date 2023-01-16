@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-If you want to go to the best website ever created then click here -> [Click Me](https://d2v31rjujvtlyf.cloudfront.net/)
+To visite this website on the internet visit this url -> [Click Me](https://d2v31rjujvtlyf.cloudfront.net/)
 
 ## Deploying Content to Website
 

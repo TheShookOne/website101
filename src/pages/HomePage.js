@@ -1,10 +1,15 @@
-import SearchBar from "../components/SearchBar";
+import Header from "../components/Header";
+import Popular from "../components/Popular";
+import Veggie from "../components/Veggie";
+
+import React from "react";
 
 function HomePage() {
   return (
-    <div className="App-header">
-      <h1>Recipe Book</h1>
-      <SearchBar></SearchBar>
+    <div>
+      <Header></Header>
+      <Veggie></Veggie>
+      <Popular></Popular>
     </div>
   );
 }

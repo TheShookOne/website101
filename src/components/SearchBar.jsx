@@ -15,7 +15,7 @@ function SearchBar() {
 }
 const FormStyle = styled.form`
   position: relative;
-  width: 50%;
+  width: 60%;
   input{
     border: none;
     background: linear-gradient(35deg, #494949, #313131);
@@ -29,12 +29,12 @@ const FormStyle = styled.form`
   }
   svg{
     position: absolute;
-    top: 70%;
-    left: -1%;
+    top: 65%;
+    left: 67%;
     transform: translate(100%, -50%);
     color: white;
-    height: 30%;
-    width: 2%;
+    height: 35%;
+    width: 20%;
   }
 `
 
