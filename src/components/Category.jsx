@@ -8,15 +8,11 @@ function Category() {
     <List>
       <StyledLink to={"/cuisine/Italian"}>
         <FaPizzaSlice />
-        <h4>Italian</h4>
+        <h4>Add New</h4>
       </StyledLink>
       <StyledLink to={"/cuisine/American"}>
         <FaHamburger />
-        <h4>American</h4>
-      </StyledLink>
-      <StyledLink to={"/cuisine/Thai"}>
-        <GiNoodles />
-        <h4>Thai</h4>
+        <h4>Browse</h4>
       </StyledLink>
     </List>
   );
